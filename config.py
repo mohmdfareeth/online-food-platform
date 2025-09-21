@@ -1,0 +1,5 @@
+MYSQL_HOST = 'localhost'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = 'Fareeth@123'
+MYSQL_DB = 'food_ordering'
+MYSQL_CURSORCLASS = 'DictCursor'

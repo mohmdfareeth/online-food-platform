@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>My Orders</h2>
+  <table class="table table-striped">
+    <tr><th>Item</th><th>Qty</th><th>Total</th><th>Status</th><th>Restaurant</th></tr>
+    {% for o in orders %}
+      <tr>
+        <td>{{ o.item_name }}</td>
+        <td>{{ o.quantity }}</td>
+        <td>₹{{ o.total }}</td>
+        <td>{{ o.status }}</td>
+        <td>{{ o.restaurant }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

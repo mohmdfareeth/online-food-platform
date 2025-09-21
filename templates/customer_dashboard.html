@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Customer Dashboard</h2>
+  <a href="{{ url_for('view_menu') }}" class="btn btn-primary">View Menu</a>
+  <a href="{{ url_for('view_orders') }}" class="btn btn-info">My Orders</a>
+{% endblock %}

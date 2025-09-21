@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Restaurant Orders</h2>
+  <table class="table">
+    <tr><th>Item</th><th>Qty</th><th>Total</th><th>Status</th><th>Customer</th><th>Actions</th></tr>
+    {% for o in orders %}
+      <tr>
+        <td>{{ o.item_name }}</td>
+        <td>{{ o.quantity }}</td>
+        <td>₹{{ o.total }}</td>
+        <td>{{ o.status }}</td>
+        <td>{{ o.customer }}</td>
+        <td>
+          <a href="{{ url_for('update_order', order_id=o.id, status='accepted') }}" class="btn btn-sm btn-success">Accept</a>
+          <a href="{{ url_for('update_order', order_id=o.id, status='rejected') }}" class="btn btn-sm btn-danger">Reject</a>
+          <a href="{{ url_for('update_order', order_id=o.id, status='delivered') }}" class="btn btn-sm btn-primary">Deliver</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

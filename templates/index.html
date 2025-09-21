@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Food Ordering{% endblock %}
+
+{% block content %}
+<!-- Home page background with overlay -->
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        /* Background image */
+        background: url('{{ url_for("static", filename="images/Food Background.jpeg") }}') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        text-align: center;
+    }
+
+    .home-container {
+        background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+        padding: 60px;
+        margin: 120px auto;
+        width: 70%;
+        border-radius: 15px;
+    }
+
+    .home-container h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .home-container p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .home-container a {
+        display: inline-block;
+        margin: 10px 15px;
+        padding: 12px 25px;
+        font-size: 1rem;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .btn-login {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-login:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-register {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-register:hover {
+        background-color: #1e7e34;
+    }
+</style>
+
+<div class="home-container">
+    <h1>Welcome to Online Food Ordering</h1>
+    <p>Order food from your favorite restaurants easily and quickly!</p>
+    <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+    <a href="{{ url_for('register') }}" class="btn-register">Register</a>
+</div>
+{% endblock %}
